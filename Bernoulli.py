@@ -29,23 +29,6 @@ def intervalo_confianza_bernoulli(confianza, probabilidad_muestral, n):
     
     return limite_inferior, limite_superior
 
-def intervalo_confianza_bernoulli(confianza, probabilidad_muestral, n):
-    """
-    Calcula el intervalo de confianza para un proceso de Bernoulli.
-    
-    :param confianza: Nivel de confianza (por ejemplo, 0.95 para un intervalo de confianza del 95%)
-    :param probabilidad_muestral: Proporción muestral (por ejemplo, 0.5)
-    :param n: Número de experimentos
-    :return: Intervalo de confianza (limite_inferior, limite_superior)
-    """
-    z = calcular_z_critico(confianza)
-    margen_error = z * math.sqrt((probabilidad_muestral * (1 - probabilidad_muestral)) / n)
-    
-    limite_inferior = probabilidad_muestral - margen_error
-    limite_superior = probabilidad_muestral + margen_error
-    
-    return limite_inferior, limite_superior
-
 def calcular_tamano_muestra(confianza, probabilidad_muestral, margen_error):
     """
     Calcula la cantidad de experimentos necesarios para un proceso de Bernoulli.
